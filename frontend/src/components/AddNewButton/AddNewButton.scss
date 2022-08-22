@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+
+.add-new-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+    &:hover {
+        color: $orangered;
+        
+        img {
+            opacity: unset;
+        }
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        user-select: none;
+    }
+
+    img {
+        width: 30px;
+        opacity: 0.8;
+    }
+}

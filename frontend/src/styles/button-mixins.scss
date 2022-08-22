@@ -1,0 +1,92 @@
+@mixin size($text, $height, $padding) {
+    font-size: $text;
+    line-height: $text;
+    height: $height;
+    padding: $padding;
+}
+
+@mixin text-color($color) {
+    color: $color;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+
+    .mask-icon {
+        background: unset;
+        background-color: $color;
+    }
+}
+
+@mixin text-color-gradient($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    .mask-icon {
+        background: $gradient;
+    }
+}
+
+@mixin size($text, $height, $padding) {
+    font-size: $text;
+    line-height: $text;
+    height: $height;
+    padding: $padding;
+}
+
+@mixin button-design($border, $text, $background, $gradient) {
+    @if $border {
+        border: 1px solid $border;
+    }
+
+    @if $background {
+        background: $background;
+    }
+
+    @if $gradient {
+        @include text-color-gradient($text);
+    } @else {
+        @include text-color($text);
+    }
+}
+
+@mixin button-disable($background, $border) {
+    @include text-color($grey2);
+
+    background: transparent;
+    cursor: unset;
+
+    @if $border {
+        border: 1px solid $grey5;
+    } @else {
+        border: none;
+    }
+}
+
+@mixin button-gradient-structure($color, $gradient) {
+    &.primary {
+        background: $gradient;
+        @include text-color($black);
+
+        &:hover {
+            @include button-design(
+                $color,
+                $white,
+                transparent,
+                $gradient: false
+            );
+        }
+
+        &:active {
+            @include button-design(
+                $color,
+                $gradient,
+                transparent,
+                $gradient: true
+            );
+        }
+
+        &:disabled {
+            @include button-disable($dark-grey, $border: false);
+        }
+    }
+}

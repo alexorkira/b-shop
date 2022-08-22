@@ -1,0 +1,26 @@
+@import '../../styles/colors.scss';
+
+.MuiTableCell-head {
+    font-weight: 800 !important;
+}
+
+.MuiTableBody-root {
+    &:nth-child(2n) {
+        background: linear-gradient($white, $light-grey);
+    }
+
+    input {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid grey;
+    }
+
+    .actions {
+        gap: 10px;
+    }
+    
+    .mask-icon {
+        cursor: pointer;
+    }
+}

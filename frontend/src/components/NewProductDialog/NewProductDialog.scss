@@ -1,0 +1,35 @@
+@import '../../styles/colors';
+
+.new-product-dialog {
+    align-items: center;
+   
+    .new-product-container {
+        margin-bottom: 40px;
+    }
+
+    .dialog-body {
+        align-self: center;
+    }
+
+    .price-container {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    
+        .currency {
+            font-size: 18px;
+        }
+    }
+
+    .add-media {
+        width: 10px;
+     }
+
+     .dialog-content  {
+        background-color: $white;
+        background-repeat: no-repeat;
+        background-size: 80%, 60%;
+        background-position: 115% 28%;
+        border: none;
+     }
+}
